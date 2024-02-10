@@ -1,0 +1,10 @@
+{
+    "firstName": "Tom",
+    "lastName": "Jackson",
+    "gender": "male",
+    "hobby": [
+        "foot",
+        "reading",
+        "swimming"
+    ]
+}
