@@ -1,0 +1,102 @@
+[
+    {
+        "firstName": "Alex",
+        "lastName": "Smith",
+        "gender": "male",
+        "hobby": [
+            "reading",
+            "cycling",
+            "hiking"
+        ]
+    },
+    {
+        "firstName": "Jamie",
+        "lastName": "Johnson",
+        "gender": "female",
+        "hobby": [
+            "painting",
+            "traveling",
+            "cooking"
+        ]
+    },
+    {
+        "firstName": "Chris",
+        "lastName": "Williams",
+        "gender": "non-binary",
+        "hobby": [
+            "gaming",
+            "fishing",
+            "gardening"
+        ]
+    },
+    {
+        "firstName": "Pat",
+        "lastName": "Brown",
+        "gender": "male",
+        "hobby": [
+            "photography",
+            "writing",
+            "knitting"
+        ]
+    },
+    {
+        "firstName": "Jordan",
+        "lastName": "Jones",
+        "gender": "female",
+        "hobby": [
+            "dancing",
+            "singing",
+            "acting"
+        ]
+    },
+    {
+        "firstName": "Taylor",
+        "lastName": "Miller",
+        "gender": "non-binary",
+        "hobby": [
+            "surfing",
+            "skateboarding",
+            "snowboarding"
+        ]
+    },
+    {
+        "firstName": "Casey",
+        "lastName": "Davis",
+        "gender": "male",
+        "hobby": [
+            "programming",
+            "electronics",
+            "robotics"
+        ]
+    },
+    {
+        "firstName": "Morgan",
+        "lastName": "Garcia",
+        "gender": "female",
+        "hobby": [
+            "yoga",
+            "meditation",
+            "pilates"
+        ]
+    },
+    {
+        "firstName": "Leslie",
+        "lastName": "Rodriguez",
+        "gender": "non-binary",
+        "hobby": [
+            "boxing",
+            "martial arts",
+            "fencing"
+        ]
+    },
+    {
+        "firstName": "Drew",
+        "lastName": "Wilson",
+        "gender": "male",
+        "hobby": [
+            "archery",
+            "horse riding",
+            "climbing"
+        ]
+    }
+]

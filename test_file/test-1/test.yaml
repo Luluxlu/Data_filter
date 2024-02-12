@@ -1,0 +1,81 @@
+- profile_0:
+    firstName: Alex
+    lastName: Smith
+    gender: male
+    hobby:
+        - reading
+        - cycling
+        - hiking
+- profile_1:
+    firstName: Jamie
+    lastName: Johnson
+    gender: female
+    hobby:
+        - painting
+        - traveling
+        - cooking
+- profile_2:
+    firstName: Chris
+    lastName: Williams
+    gender: non-binary
+    hobby:
+        - gaming
+        - fishing
+        - gardening
+- profile_3:
+    firstName: Pat
+    lastName: Brown
+    gender: male
+    hobby:
+        - photography
+        - writing
+        - knitting
+- profile_4:
+    firstName: Jordan
+    lastName: Jones
+    gender: female
+    hobby:
+        - dancing
+        - singing
+        - acting
+- profile_5:
+    firstName: Taylor
+    lastName: Miller
+    gender: non-binary
+    hobby:
+        - surfing
+        - skateboarding
+        - snowboarding
+- profile_6:
+    firstName: Casey
+    lastName: Davis
+    gender: male
+    hobby:
+        - programming
+        - electronics
+        - robotics
+- profile_7:
+    firstName: Morgan
+    lastName: Garcia
+    gender: female
+    hobby:
+        - yoga
+        - meditation
+        - pilates
+- profile_8:
+    firstName: Leslie
+    lastName: Rodriguez
+    gender: non-binary
+    hobby:
+        - boxing
+        - martial arts
+        - fencing
+- profile_9:
+    firstName: Drew
+    lastName: Wilson
+    gender: male
+    hobby:
+        - archery
+        - horse riding
+        - climbing
+

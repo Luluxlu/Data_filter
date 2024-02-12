@@ -1,0 +1,116 @@
+[
+    {
+        "id": 38,
+        "score": 34.97,
+        "name": "Beta",
+        "active": true,
+        "interests": [
+            false,
+            "Alpha",
+            9.09,
+            true,
+            "Gamma"
+        ]
+    },
+    {
+        "id": 13,
+        "score": 28.1,
+        "name": "Alpha",
+        "active": true,
+        "interests": [
+            31,
+            "Beta",
+            26,
+            68.71
+        ]
+    },
+    {
+        "id": 86,
+        "score": 39.12,
+        "name": "Epsilon",
+        "active": false,
+        "interests": [
+            "Beta",
+            24
+        ]
+    },
+    {
+        "id": 16,
+        "score": 73.7,
+        "name": "Epsilon",
+        "active": true,
+        "interests": [
+            41,
+            "Beta",
+            "Gamma",
+            68.9
+        ]
+    },
+    {
+        "id": 74,
+        "score": 90.61,
+        "name": "Delta",
+        "active": true,
+        "interests": [
+            true,
+            12,
+            "Delta",
+            19.18
+        ]
+    },
+    {
+        "id": 35,
+        "score": 31.63,
+        "name": "Alpha",
+        "active": false,
+        "interests": [
+            false,
+            81.48,
+            "Gamma",
+            "Epsilon"
+        ]
+    },
+    {
+        "id": 24,
+        "score": 73.98,
+        "name": "Beta",
+        "active": true,
+        "interests": [
+            "Alpha",
+            true
+        ]
+    },
+    {
+        "id": 31,
+        "score": 68.01,
+        "name": "Alpha",
+        "active": true,
+        "interests": [
+            false,
+            "Epsilon"
+        ]
+    },
+    {
+        "id": 68,
+        "score": 92.49,
+        "name": "Gamma",
+        "active": true,
+        "interests": [
+            true,
+            true
+        ]
+    },
+    {
+        "id": 18,
+        "score": 41.71,
+        "name": "Alpha",
+        "active": false,
+        "interests": [
+            31,
+            "Epsilon",
+            "Beta",
+            11,
+            5
+        ]
+    }
+]

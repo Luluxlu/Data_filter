@@ -1,0 +1,61 @@
+[
+    {
+        "category": "vehicle",
+        "make": "Epsilon",
+        "model": "Beta",
+        "year": 2012
+    },
+    {
+        "category": "person",
+        "firstName": "Alpha",
+        "lastName": "Gamma",
+        "age": 7
+    },
+    {
+        "category": "Unknown",
+        "name": "Beta",
+        "price": 561.91
+    },
+    {
+        "category": "animal",
+        "species": "Beta",
+        "name": "Delta",
+        "age": 38
+    },
+    {
+        "category": "book",
+        "title": "Epsilon",
+        "author": "Gamma",
+        "year": 2007
+    },
+    {
+        "category": "movie",
+        "title": "Alpha",
+        "director": "Epsilon",
+        "year": 1996
+    },
+    {
+        "category": "computer",
+        "brand": "Alpha",
+        "model": "Epsilon",
+        "processor": "Beta"
+    },
+    {
+        "category": "game",
+        "title": "Gamma",
+        "platform": "Gamma",
+        "genre": "Alpha"
+    },
+    {
+        "category": "food",
+        "name": "Alpha",
+        "type": "Gamma",
+        "calories": 117
+    },
+    {
+        "category": "city",
+        "name": "Beta",
+        "country": "Alpha",
+        "population": 319005
+    }
+]
