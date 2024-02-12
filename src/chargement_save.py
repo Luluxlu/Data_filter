@@ -2,6 +2,8 @@ import csv
 import json
 import yaml
 import xml.etree.ElementTree as ET
+from xml.dom.minidom import parseString
+
 
 
 def identifier_type(valeur):
@@ -33,11 +35,13 @@ def charger_csv(chemin_fichier):
 
 
 # sauvegarder un csv
-def sauvegarder_en_csv(self, donnees, chemin_fichier, entetes):
+def sauvegarder_en_csv(donnees, chemin_fichier, entetes):
     with open(chemin_fichier, 'w', newline='', encoding='utf-8') as fichier:
-        ecrivain = csv.writer(fichier)
-        ecrivain.writerow(entetes)
-        ecrivain.writerows(donnees)
+        writer = csv.DictWriter(fichier, fieldnames=entetes)
+        writer.writeheader()
+        for item in donnees:
+            # Assurez-vous que item est un dictionnaire avec les clés correspondant aux entêtes
+            writer.writerow({entete: item.get(entete, '') for entete in entetes})
 
 
 def extraire_champs_json(donnees):
@@ -67,10 +71,10 @@ def charger_json(chemin_fichier):
 
 
 # sauvegarder un json
-def sauvegarder_en_json(self, donnees, chemin_fichier):
-    donnees_dict = [dict(zip(self.entetes, ligne)) for ligne in donnees]
+def sauvegarder_en_json(donnees, chemin_fichier):
     with open(chemin_fichier, 'w', encoding='utf-8') as fichier:
-        json.dump(donnees_dict, fichier, indent=4)
+        # Données est une liste de dictionnaires
+        json.dump(donnees, fichier, indent=4, ensure_ascii=False)
 
 
 def extraire_champs_yaml(donnees):
@@ -103,10 +107,10 @@ def charger_yaml(chemin_fichier):
 
 
 # sauvegarder un yaml
-def sauvegarder_en_yaml(self, donnees, chemin_fichier):
-    donnees_dict = [dict(zip(self.entetes, ligne)) for ligne in donnees]
+def sauvegarder_en_yaml(donnees, chemin_fichier):
     with open(chemin_fichier, 'w', encoding='utf-8') as fichier:
-        yaml.dump(donnees_dict, fichier, allow_unicode=True)
+        # Utilisation de allow_unicode pour gérer correctement les chaînes unicode
+        yaml.dump(donnees, fichier, allow_unicode=True, default_flow_style=False)
 
 
 # charger un xml
@@ -146,12 +150,22 @@ def charger_xml(chemin_fichier):
 
 
 # sauvegarder un xml
-def sauvegarder_en_xml(self, donnees, chemin_fichier):
-    racine = ET.Element('donnees')
-    for ligne in donnees:
-        element = ET.SubElement(racine, 'ligne')
-        for i, val in enumerate(ligne):
-            sous_element = ET.SubElement(element, self.entetes[i])
-            sous_element.text = str(val)
-    arbre = ET.ElementTree(racine)
-    arbre.write(chemin_fichier, encoding='utf-8', xml_declaration=True)
+def sauvegarder_en_xml(donnees, chemin_fichier, entetes):
+    racine = ET.Element('Root')
+    for item in donnees:
+        item_element = ET.SubElement(racine, 'Item')
+        for entete in entetes:
+            child = ET.SubElement(item_element, entete)
+            # Supposons que chaque item est un dictionnaire où la clé est l'entête
+            child.text = str(item.get(entete, ""))
+
+    # Construire l'arbre XML et convertir en chaîne
+    rough_string = ET.tostring(racine, 'utf-8')
+    reparsed = parseString(rough_string)
+
+    # Écrire le joli formatage dans le fichier
+    with open(chemin_fichier, 'w', encoding='utf-8') as fichier:
+        # prettyxml renvoie une chaîne formatée avec des indentations pour chaque élément
+        fichier.write(reparsed.toprettyxml(indent="  "))
+
+

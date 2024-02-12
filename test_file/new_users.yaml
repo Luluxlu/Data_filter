@@ -1,0 +1,85 @@
+- active: false
+  id: 91
+  interests:
+  - 72
+  - Epsilon
+  - Gamma
+  - 45
+  name: Delta
+  score: 71.73
+- active: false
+  id: 86
+  interests:
+  - true
+  - 42.2
+  - true
+  - 86
+  - 5
+  name: Alpha
+  score: 46.56
+- active: true
+  id: 49
+  interests:
+  - true
+  - Beta
+  - 53.85
+  - Beta
+  name: Beta
+  score: 59.5
+- active: true
+  id: 35
+  interests:
+  - 65
+  - Delta
+  name: Epsilon
+  score: 77.96
+- active: false
+  id: 77
+  interests:
+  - Beta
+  - 73.86
+  - true
+  name: Epsilon
+  score: 54.21
+- active: true
+  id: 40
+  interests:
+  - true
+  - Gamma
+  - Epsilon
+  - 61
+  name: Alpha
+  score: 63.35
+- active: false
+  id: 3
+  interests:
+  - 41
+  - 51.82
+  - 9
+  - Delta
+  name: Epsilon
+  score: 70.39
+- active: false
+  id: 5
+  interests:
+  - 92
+  - 19
+  - Epsilon
+  - true
+  name: Gamma
+  score: 69.76
+- active: true
+  id: 66
+  interests:
+  - 63
+  - 37
+  name: Epsilon
+  score: 84.74
+- active: true
+  id: 91
+  interests:
+  - 70
+  - false
+  - 29.68
+  name: Gamma
+  score: 78.68

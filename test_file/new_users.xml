@@ -1,0 +1,72 @@
+<users>
+    <user>
+        <id>91</id>
+        <score>71.73</score>
+        <name>Delta</name>
+        <active>False</active>
+        <interests>72, Epsilon, Gamma, 45</interests>
+    </user>
+    <user>
+        <id>86</id>
+        <score>46.56</score>
+        <name>Alpha</name>
+        <active>False</active>
+        <interests>True, 42.2, True, 86, 5</interests>
+    </user>
+    <user>
+        <id>49</id>
+        <score>59.5</score>
+        <name>Beta</name>
+        <active>True</active>
+        <interests>True, Beta, 53.85, Beta</interests>
+    </user>
+    <user>
+        <id>35</id>
+        <score>77.96</score>
+        <name>Epsilon</name>
+        <active>True</active>
+        <interests>65, Delta</interests>
+    </user>
+    <user>
+        <id>77</id>
+        <score>54.21</score>
+        <name>Epsilon</name>
+        <active>False</active>
+        <interests>Beta, 73.86, True</interests>
+    </user>
+    <user>
+        <id>40</id>
+        <score>63.35</score>
+        <name>Alpha</name>
+        <active>True</active>
+        <interests>True, Gamma, Epsilon, 61</interests>
+    </user>
+    <user>
+        <id>3</id>
+        <score>70.39</score>
+        <name>Epsilon</name>
+        <active>False</active>
+        <interests>41, 51.82, 9, Delta</interests>
+    </user>
+    <user>
+        <id>5</id>
+        <score>69.76</score>
+        <name>Gamma</name>
+        <active>False</active>
+        <interests>92, 19, Epsilon, True</interests>
+    </user>
+    <user>
+        <id>66</id>
+        <score>84.74</score>
+        <name>Epsilon</name>
+        <active>True</active>
+        <interests>63, 37</interests>
+    </user>
+    <user>
+        <id>91</id>
+        <score>78.68</score>
+        <name>Gamma</name>
+        <active>True</active>
+        <interests>70, False, 29.68</interests>
+    </user>
+</users>

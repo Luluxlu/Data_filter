@@ -1,0 +1,11 @@
+id,score,name,active,interests
+91,71.73,Delta,False,72;Epsilon;Gamma;45
+86,46.56,Alpha,False,True;42.2;True;86;5
+49,59.5,Beta,True,True;Beta;53.85;Beta
+35,77.96,Epsilon,True,65;Delta
+77,54.21,Epsilon,False,Beta;73.86;True
+40,63.35,Alpha,True,True;Gamma;Epsilon;61
+3,70.39,Epsilon,False,41;51.82;9;Delta
+5,69.76,Gamma,False,92;19;Epsilon;True
+66,84.74,Epsilon,True,63;37
+91,78.68,Gamma,True,70;False;29.68

@@ -1,0 +1,117 @@
+[
+    {
+        "id": 91,
+        "score": 71.73,
+        "name": "Delta",
+        "active": false,
+        "interests": [
+            72,
+            "Epsilon",
+            "Gamma",
+            45
+        ]
+    },
+    {
+        "id": 86,
+        "score": 46.56,
+        "name": "Alpha",
+        "active": false,
+        "interests": [
+            true,
+            42.2,
+            true,
+            86,
+            5
+        ]
+    },
+    {
+        "id": 49,
+        "score": 59.5,
+        "name": "Beta",
+        "active": true,
+        "interests": [
+            true,
+            "Beta",
+            53.85,
+            "Beta"
+        ]
+    },
+    {
+        "id": 35,
+        "score": 77.96,
+        "name": "Epsilon",
+        "active": true,
+        "interests": [
+            65,
+            "Delta"
+        ]
+    },
+    {
+        "id": 77,
+        "score": 54.21,
+        "name": "Epsilon",
+        "active": false,
+        "interests": [
+            "Beta",
+            73.86,
+            true
+        ]
+    },
+    {
+        "id": 40,
+        "score": 63.35,
+        "name": "Alpha",
+        "active": true,
+        "interests": [
+            true,
+            "Gamma",
+            "Epsilon",
+            61
+        ]
+    },
+    {
+        "id": 3,
+        "score": 70.39,
+        "name": "Epsilon",
+        "active": false,
+        "interests": [
+            41,
+            51.82,
+            9,
+            "Delta"
+        ]
+    },
+    {
+        "id": 5,
+        "score": 69.76,
+        "name": "Gamma",
+        "active": false,
+        "interests": [
+            92,
+            19,
+            "Epsilon",
+            true
+        ]
+    },
+    {
+        "id": 66,
+        "score": 84.74,
+        "name": "Epsilon",
+        "active": true,
+        "interests": [
+            63,
+            37
+        ]
+    },
+    {
+        "id": 91,
+        "score": 78.68,
+        "name": "Gamma",
+        "active": true,
+        "interests": [
+            70,
+            false,
+            29.68
+        ]
+    }
+]

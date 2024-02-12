@@ -17,6 +17,7 @@ class Application(tk.Tk):
         self.save_button = None
         self.load_button = None
         self.champs_combobox = None
+        self.donnees_avec_types = []
         self.tree = None
         self.scrollbar = None
         self.title("Gestionnaire de Données")
@@ -110,8 +111,15 @@ class Application(tk.Tk):
         donnees = []
         for ligne in self.tree.get_children():
             valeurs_ligne = self.tree.item(ligne)['values']
-            donnees.append(valeurs_ligne)
+            ligne_dict = {self.entetes[i]: valeur for i, valeur in enumerate(valeurs_ligne)}
+            donnees.append(ligne_dict)
         return donnees
+
+    def extraire_entetes(self):
+        # Supposons que votre Combobox contient des valeurs d'entête comme "nom_champ (type)"
+        entetes_brutes = self.champs_combobox['values']
+        # Extraire juste les noms de champ avant le premier espace (" ")
+        self.entetes = [entete.split(' (')[0] for entete in entetes_brutes]
 
     def load_data(self):
         file_path = filedialog.askopenfilename()
@@ -133,21 +141,41 @@ class Application(tk.Tk):
             # Mise à jour de la liste déroulante et de l'affichage
             self.update_combobox(champs)
 
-            champs = [champ for champ, _ in champs]  # Extraire juste les noms des champs
+            champs = [champ for champ, _ in champs]
+            self.donnees_avec_types = donnees_formattees
             self.update_treeview(champs, donnees_formattees)
 
     def save_data(self):
-        file_path = filedialog.asksaveasfilename()
+        # Définir les types de fichiers supportés pour la sauvegarde
+        types_fichiers = [
+            ('Fichiers JSON', '*.json'),
+            ('Fichiers CSV', '*.csv'),
+            ('Fichiers XML', '*.xml'),
+            ('Fichiers YAML', '*.yaml *.yml'),
+            ('Tous les fichiers', '*.*')
+        ]
+
+        # Ouvrir la boîte de dialogue de sauvegarde avec les options de type de fichier
+        file_path = filedialog.asksaveasfilename(filetypes=types_fichiers, defaultextension=types_fichiers)
+
         if file_path:
+            # L'extension est déterminée par le choix de l'utilisateur dans la boîte de dialogue
             extension = file_path.split('.')[-1].lower()
+
+            self.extraire_entetes()
             donnees = self.extraire_donnees_treeview()
-            if extension == 'csv':
-                sauvegarder_en_csv(self, donnees, file_path, self.entetes)
-            elif extension == 'json':
-                sauvegarder_en_json(self, donnees, file_path)
-            elif extension == 'xml':
-                sauvegarder_en_xml(self, donnees, file_path)
+
+            # Convertir les données du Treeview en une liste de dictionnaires
+            donnees_dict = [{self.entetes[i]: valeur for i, valeur in enumerate(ligne)} for ligne in donnees]
+
+            # Choisir la fonction de sauvegarde en fonction de l'extension choisie
+            if extension in ['json']:
+                sauvegarder_en_json(donnees, file_path)
+            elif extension in ['csv']:
+                sauvegarder_en_csv(donnees, file_path, self.entetes)
+            elif extension in ['xml']:
+                sauvegarder_en_xml(donnees, file_path, self.entetes)
             elif extension in ['yaml', 'yml']:
-                sauvegarder_en_yaml(self, donnees, file_path)
+                sauvegarder_en_yaml(donnees, file_path)
             else:
                 messagebox.showerror("Erreur", "Type de fichier non supporté.")
