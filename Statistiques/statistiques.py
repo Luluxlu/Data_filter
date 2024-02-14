@@ -7,36 +7,59 @@ class StatsApp(Application):
     def __init__(self):
         super().__init__()
         self.stats = {}
+        self.data = []
         self.create_widgets_specific_to_stats_app()
+        print("StatsApp initialisée.")
 
-    def load_data(self):
-        super().load_data()
+    def load_data_and_calculate_stats(self):
+        # Exemple de pseudo-code pour charger les données sans les effacer
+        if not self.data:  # Supposons que vous ne voulez charger les données que si elles ne sont pas déjà chargées
+            # Chargement des données ici dans self.data
+            pass  # Remplacez ceci par votre logique de chargement des données réelle
+
+        
+        # Ici, vous chargeriez vos données dans self.data
+        # Pour l'exemple, supposons que self.data soit déjà rempli avec les données chargées
         self.calculate_stats()
         self.update_treeview_with_stats()
 
-    def calculate_stats(self):
-        print("La méthode calculate_stats() est appelée.")
-        self.stats = {}
+    def parse_value(value):
+        """Convertit une valeur chaîne en son type approprié (float, bool, list, ou str)."""
+        if value.replace('.', '', 1).isdigit():
+            return float(value)
+        elif value.lower() in ['true', 'false']:
+            return value.lower() == 'true'
+        elif ';' in value:
+            return value.split(';')
+        else:
+            return value  # Garde la chaîne telle quelle si aucun autre cas ne correspond
 
-        for item in self.donnees_avec_types:
-
-            if not isinstance(item, tuple) or len(item) != 2:
-                print(f"Erreur: Le tuple {item} ne contient pas exactement deux éléments.")
-                continue
-             
-            champ, type_champ = item
-            valeurs = [self.extraire_valeur(item, champ) for item in self.donnees_formattees]
-            if type_champ in [int, float]:
-                self.stats[champ] = self.calculer_stats_numeriques(valeurs)
-            elif type_champ == bool:
-                self.stats[champ] = self.calculer_stats_booleens(valeurs)
-            elif type_champ == list:
-                self.stats[champ] = self.calculer_stats_listes(valeurs)
+    def calculate_stats(self, donnees_formattees):
+        stats = {}
+        # Conversion des données au format approprié
+        for donnee in donnees_formattees:
+            for champ, valeur_str in donnee.items():
+                valeur = parse_value(valeur_str)  # Convertit la valeur en son type approprié
+                if isinstance(valeur, float):  # Exemple pour les valeurs numériques
+                    if champ not in stats:
+                        stats[champ] = {'min': valeur, 'max': valeur, 'somme': valeur, 'count': 1}
+                    else:
+                        stats[champ]['min'] = min(stats[champ]['min'], valeur)
+                        stats[champ]['max'] = max(stats[champ]['max'], valeur)
+                        stats[champ]['somme'] += valeur
+                        stats[champ]['count'] += 1
+        # Calcul de la moyenne pour les champs numériques
+        for champ, stat in stats.items():
+            if 'somme' in stat:  # Vérifie si le champ est numérique
+                stat['moyenne'] = stat['somme'] / stat['count']
+                del stat['somme'], stat['count']  # Supprime 'somme' et 'count' qui ne sont plus nécessaires
+        
+        return stats
 
     def extraire_valeur(self, item, champ):
         # Cette méthode extrait la valeur pour le champ donné en tenant compte du type
-        valeur = item.get(champ, 0 if isinstance(item[champ], (int, float)) else False if isinstance(item[champ], bool) else [])
-        return valeur
+        return item.get(champ, 0 if champ in item and isinstance(item[champ], (int, float)) else False if champ in item and isinstance(item[champ], bool) else [])
+         
 
     def calculer_stats_numeriques(self, valeurs):
         if not valeurs: return {"min": 0, "max": 0, "moyenne": 0}
@@ -92,5 +115,6 @@ class StatsApp(Application):
     def create_widgets_specific_to_stats_app(self):
 
         # Ajoutez ici le bouton spécifique à StatsApp pour afficher les statistiques
-        self.stats_button = tk.Button(self, text="Afficher Statistiques", command=self.afficher_stats)
-        self.stats_button.pack(pady=5)
+        load_button = tk.Button(self, text="Charger et Calculer Statistiques", command=self.load_data_and_calculate_stats)
+        load_button.pack()
+        print("Widgets spécifiques à StatsApp créés.")

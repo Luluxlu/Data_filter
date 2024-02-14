@@ -6,5 +6,5 @@ from view.interface import Application
 from Statistiques.statistiques import StatsApp
 
 if __name__ == "__main__":
-    app = StatsApp()
+    app = Application()
     app.mainloop()
