@@ -27,6 +27,7 @@ class Application(tk.Tk):
         self.create_widgets()
 
     def create_widgets(self):
+
         # Boutons Charger et Sauvegarder
         self.load_button = tk.Button(self, text="Charger", command=self.load_data)
         self.load_button.pack(pady=5)
@@ -49,6 +50,7 @@ class Application(tk.Tk):
         # Combobox pour les champs détectés
         self.champs_combobox = ttk.Combobox(self, state="readonly", width=60)
         self.champs_combobox.pack(pady=5)
+
 
     def on_click(self, event):
         # Identifier l'item sur lequel le clic a eu lieu
